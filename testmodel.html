@@ -1,0 +1,1095 @@
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+    <meta charset="utf-8">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+<style type="text/css">
+body
+ {
+background-image:url("background.jpg");
+     background-repeat: no-repeat;
+     background-size: cover;
+ }
+ #features{
+   margin-top:10px;
+margin-left: 10px;
+   font-family: Montserrat;
+   display: inline-block;
+ }
+ #features1{
+   margin-top:10px;
+
+   font-family: Montserrat;
+   float: right;
+   display: block;
+   margin-right: 10px;
+ }
+ #features2{
+   margin-top:80px;
+   font-family: Montserrat;
+   float: right;
+   display: block;
+   margin-right: 500px;
+ }
+ #countdown {
+   position: relative;
+   margin: auto;
+   margin-top: -25px;
+   height: 40px;
+   width: 40px;
+   text-align: center;
+   float: left;
+ }
+
+ #countdown-number {
+   color: white;
+   display: inline-block;
+   line-height: 40px;
+ }
+
+#round,svg {
+   position: absolute;
+   top: 0;
+   right: 0;
+   width: 40px;
+   height: 40px;
+   transform: rotateY(-180deg) rotateZ(-90deg);
+ }
+.user1{
+margin-top: 10.5%;
+margin-left: 12%;
+}
+.user2{
+  margin-top: -16.25%;
+  margin-left: 32%;
+}
+.user3{
+  margin-top: -16.25%;
+  margin-left: 52%;
+}
+.user4{
+  margin-top: -16.45%;
+  margin-left: 72%;
+}
+ #round1,svg circle {
+ stroke-dasharray: 113px;
+   stroke-dashoffset: 0px;
+   stroke-linecap: round;
+   stroke-width: 2px;
+   stroke: white;
+   fill:none;
+   animation: countdown 3s linear infinite forwards;
+ }
+ *, *::after, *::before {
+   box-sizing: border-box;
+ }
+
+ .modal {
+   position: fixed;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%) scale(0);
+   transition: 200ms ease-in-out;
+   border: 1px solid black;
+   border-radius: 10px;
+   z-index: 10;
+   background-color: #020202;
+   width: 500px;
+   max-width: 80%;
+ }
+
+ .modal.active {
+   transform: translate(-50%, -50%) scale(1);
+ }
+
+ .modal-header {
+   padding: 10px 15px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   border-bottom: 1px solid white;
+ }
+
+ .modal-header .title {
+   font-size: 1.25rem;
+   font-weight: bold;
+ }
+
+ .modal-header .close-button {
+   cursor: pointer;
+   border: none;
+   outline: none;
+   background: none;
+   font-size: 1.25rem;
+   font-weight: bold;
+ }
+
+ .modal-body {
+   padding: 10px 15px;
+   color: white;
+ }
+
+ #overlay {
+   position: fixed;
+   opacity: 0;
+   transition: 200ms ease-in-out;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   background-color: rgba(0, 0, 0, .5);
+   pointer-events: none;
+ }
+
+ #overlay.active {
+   opacity: 1;
+   pointer-events: all;
+ }
+ canvas{display:block}
+ #canv1 {
+   position: absolute;
+   top: 20%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   color: #fff;
+   font-family: "Source Sans Pro";
+   font-size: 5em;
+   font-weight: 900;
+   -webkit-user-select: none;
+   user-select: none;
+ }
+
+ }
+ </style>
+    <title></title>
+  </head>
+  <body>
+<section id="navbar">
+    <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Auction Bazzi</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Game Instructions</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Live Events</a>
+            </li>
+            </ul>
+        </div>
+      </div>
+      </nav>
+      <center>
+  <marquee scrollamount="10"><h3 style="color:white; margin-top:25px;">Make Your Team In Your Way</h3></marquee>
+</center>
+</section>
+  <div id="features">
+<h4 style="color:white; font-size:1.5rem; font-style:Montserrat"><b> Player Details </b></h4>
+<br>
+<table >
+  <tr><td><p style="color:white;font-size:1rem;"><i>NAME : </i></td><td><p style="color:white;font-size:1rem;" id="PlayerName"><i></i></td></tr>
+<tr><td><p style="color:white;font-size:1rem;"><i> Balling Economy: </i></td><td> <p style="color:white;font-size:1rem;"id="BallEco"><i>  </i></td></tr>
+<tr><td><p style="color:white;font-size:1rem;"><i>Strike-Rate : </i></td><td><p style="color:white;font-size:1rem;"id="StrikeRate"><i></i></td></tr>
+<tr><td><p style="color:white;font-size:1rem;"><i>Country : </i></td><td> <p style="color:white;font-size:1rem;" id="Country"><i></i></td></tr>
+</table>
+</div>
+<div id="features1">
+  <h4 style="color:white; font-size:1.5rem; font-style:Montserrat" id="userteam"><b> User Team </b></h4>
+<br>
+<p style="color:white;font-size:1rem;" id="Teamplayers"><i> </i>
+</div>
+<div id=features2>
+  <div id="countdown">
+    <div id="countdown-number"></div>
+    <svg  id="round">
+      <circle r="18" cx="20" cy="20" id="round1"></circle>
+    </svg>
+  </div>
+  <img src="" hight="250" width="250" id="PlayersPics" style="margin-top:-10%">
+  <br><br>
+<table>
+  <tr><td><p style="color:white;font-size:1rem;"><i> Base-Price : </i></td><td><p id="base" style="color:white;font-size:1rem;"><i></i></td></tr><tr><td><p style="color:white;font-size:1rem;"><i> Current-Bid : </i></td>
+    <td><p style="color:white;font-size:1rem;" id="Current"><i></i></td></tr>
+  <tr><td></td>
+</table>
+</div>
+
+<div class="card border-black mb-3 user1" style="width: 18rem;background:black;color:white;">
+  <div class="card-header bg-transparent border-black" id="firstuser">User1_Name</div>
+  <div class="card-body text-white">
+    <p class="card-text" id="rm">Remaining Purse: </p>
+    <p class="card-text" id="pp">Players Purchased: </p>
+    <p class="card-text">Maximum Team Capacity: 15</p>
+    <button type="button" class="btn btn-outline-light "style="margin-left:15;" id="bid1" onclick="check()">BID</button>
+    <button type="button" class="btn btn-outline-light" style="margin-left:20;" onclick="show1()">SHOW TEAM</button>
+  </div>
+
+</div>
+<div class="card border-black mb-3 user2" style="width: 18rem;background:black;color:white;">
+  <div class="card-header bg-transparent border-black" id="seconduser">User2_Name</div>
+  <div class="card-body text-white">
+    <p class="card-text" id="rm1">Remaining Purse: </p>
+    <p class="card-text" id="pp1">Players Purchased: </p>
+    <p class="card-text">Maximum Team Capacity: 15</p>
+    <button type="button" class="btn btn-outline-light "style="margin-left:15;" id="bid2" onclick="check1()">BID</button>
+    <button type="button" class="btn btn-outline-light" style="margin-left:20;" onclick="show2()">SHOW TEAM</button>
+  </div>
+
+</div>
+<div class="card border-black mb-3 user3" style="width: 18rem;background:black;color:white;">
+  <div class="card-header bg-transparent border-black" id="thirduser">User3_Name</div>
+  <div class="card-body text-white">
+    <p class="card-text" id="rm2">Remaining Purse: </p>
+    <p class="card-text" id="pp2">Players Purchased: </p>
+    <p class="card-text">Maximum Team Capacity: 15</p>
+    <button type="button" class="btn btn-outline-light "style="margin-left:15;" id="bid3" onclick="check2()">BID</button>
+    <button type="button" class="btn btn-outline-light" style="margin-left:20;" onclick="show3()">SHOW TEAM</button>
+  </div>
+
+</div>
+<div class="card border-black mb-3 user4" style="width: 18rem;background:black;color:white;">
+  <div class="card-header bg-transparent border-black" id="fourthuser">User4_name</div>
+  <div class="card-body text-white">
+    <p class="card-text" id="rm3">Remaining Purse:</p>
+    <p class="card-text" id="pp3">Players Purchased: </p>
+    <p class="card-text">Maximum Team Capacity: 15</p>
+    <button type="button" class="btn btn-outline-light "style="margin-left:15;" id="bid4" onclick="check3()">BID</button>
+    <button type="button" class="btn btn-outline-light" style="margin-left:20;" onclick="show4()">SHOW TEAM</button>
+  </div>
+
+</div>
+<div class="modal" id="modal">
+  <div class="modal-header">
+    <div class="title">Example Modal</div>
+    <button data-close-button class="close-button">&times;</button>
+  </div>
+  <div class="modal-body">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse quod alias ut illo doloremque eum ipsum obcaecati distinctio debitis reiciendis quae quia soluta totam doloribus quos nesciunt necessitatibus, consectetur quisquam accusamus ex, dolorum, dicta vel? Nostrum voluptatem totam, molestiae rem at ad autem dolor ex aperiam. Amet assumenda eos architecto, dolor placeat deserunt voluptatibus tenetur sint officiis perferendis atque! Voluptatem maxime eius eum dolorem dolor exercitationem quis iusto totam! Repudiandae nobis nesciunt sequi iure! Eligendi, eius libero. Ex, repellat sapiente!
+  </div>
+</div>
+<div id="overlay"><h1 id="canv1">Happy</h1>
+<canvas id="birthday"></canvas><button onclick="window.location.href='auctionproj1.html'">Exit</button> </center></div>
+
+<script>
+var batters=["Virat Kohli","Rohit Sharma","Shreyas Iyer","Aaron Finch","Steven Smith","David Warner","Glenn Maxwell","Shane Watson","Mahela Jayawardena","Jason Roy",
+"Chris Gayle",
+"Evin Lewis",
+"Faf du Plessis",
+"Ross Taylor",
+"Kane Williamson",
+"Brendon McCullum",
+"AB de Villiers",
+"Shikhar Dhawan","Mohammed Shami",
+"Jasprit Bumrah",
+"Kuldeep Yadav",
+"Yuzvendra Chahal",
+"Mitchell Starc",
+"Adam Zampa",
+"Lasith Malinga",
+"Jofra Archer",
+"Imran Tahir",
+"Kagiso Rabada",
+"Lungi Ngidi",
+"Trent Boult",
+"Lockie Ferguson",
+"Rashid Khan",
+"Mujeeb Ur Rahman",
+"Chris Jordan",
+"James Pattinson",
+"Ravichandran Ashwin","Hardik Pandya",
+"Ravindra Jadeja",
+"Shardul Thakur",
+"Marcus Stoinis",
+"Moises Henriques",
+"Pat Cummins",
+"Angelo Mathews",
+"Shakib Al Hasan",
+"Moeen Ali",
+"Ben Stokes",
+"Jason Holder",
+"Andre Russell",
+"Sam Curran",
+"Chris Morris",
+"James Neesham",
+"Mohammad Nabi","KL Rahul",
+"Sanju Samson",
+"Rishabh Pant",
+"Jonny Bairstow",
+"Jos Buttler",
+"Quinton de Kock",
+"Ms Dhoni",
+"Ishan Kishan"];
+var batsmenStrikeRate=["130.74",
+"130.62",
+"126.07",
+"127.71",
+"129.25",
+"141.54",
+"154.68",
+"137.91",
+"123.25",
+"133.58",
+"150.11",
+"131.1",
+"129.25",
+"122.72",
+"134.8",
+"131.74",
+"151.68",
+"126.86","-","-","-","-","-","-","-","-","-","-","-","-","-","-","-","-","-","-","159.27",
+"126.55",
+"114.29",
+"137.27",
+"128.17",
+"131.95",
+"125.91",
+"126.66",
+"158.46",
+"135.1",
+"123.81",
+"182.33",
+"143.37",
+"157.88",
+"95.31",
+"147.47","136.37",
+"134.2",
+"147.46",
+"142.19",
+"150.0",
+"130.93",
+"135.83",
+"136.33"
+];
+var BallEco=["-","-","-","-","-","-","-","-","-","-","-","-","-","-","-","-","-","-","8.89",
+"7.42",
+"8.28",
+"7.67",
+"7.17",
+"7.74",
+"7.14",
+"7.13",
+"7.83",
+"8.24",
+"7.69",
+"8.53",
+"8.51",
+"6.25",
+"8.24",
+"9.33",
+"9.01",
+"6.87",
+"9.07",
+"7.67",
+"8.92",
+"9.38",
+"8.39",
+"8.1",
+"8.18",
+"7.46",
+"7.14",
+"8.53",
+"8.42",
+"8.96",
+"8.89",
+"7.81",
+"9.96",
+"6.55",
+"-","-","-","-","-","-","-",
+"-"];
+var rating=['A',
+'B',
+'B',
+'C',
+'B',
+'A',
+'D',
+'B',
+'C',
+'C',
+'A',
+'C',
+'B',
+'D',
+'B',
+'C',
+'A',
+'A',
+'C',
+'A',
+'C',
+'A',
+'A',
+'A',
+'A',
+'A',
+'A',
+'A',
+'A',
+'A',
+'D',
+'A',
+'C',
+'B',
+'B',
+'B',
+'B',
+'A',
+'D',
+'C',
+'C',
+'D',
+'C',
+'B',
+'D',
+'C',
+'D',
+'A',
+'D',
+'B',
+'E',
+'D',
+'A',
+'C',
+'A',
+'A',
+'B',
+'B',
+'A',
+'C'];
+var batbase=[200,200,150,150,150,200,200,200,100,100,200,150,200,100,150,200,200,200,200,200,150,200,200,100,150,200,200,100,200,150,200,150,100,100,150,200,200,200,150,200,200,200,150,200,200,150,150,150,
+  150,100,200,200,200,150,200,100,150,50,100];
+var batsCountry=["India",
+"India",
+"India",
+"Australia",
+"Australia",
+"Australia",
+"Australia",
+"Australia",
+"SriLanka",
+"England",
+"West-Indies",
+"West-Indies",
+"South-Africa",
+"New-Zealand",
+"New-Zealand",
+"New-Zealand",
+"South-Africa",
+"India","India",
+"India",
+"India",
+"India",
+"Australia",
+"Australia",
+"Sri-Lanka",
+"England",
+"South-Africa",
+"South-Africa",
+"South-Africa",
+"New-Zealand",
+"New-Zealand",
+"Afghanistan",
+"Afghanistan",
+"England",
+"Australia",
+"India","India",
+"India",
+"India",
+"England",
+"England",
+"South-Africa",
+"India",
+"India","India",
+"India",
+"India",
+"Australia",
+"Australia",
+"Australia",
+"Sri-Lanka",
+"Bangladesh",
+"England",
+"England",
+"West-Indies",
+"West-Indies",
+"England",
+"South-Africa",
+"New-Zealand",
+"Afghanistan"];
+var bid=0;
+var round;
+var count=0;
+var currentPrice=0;
+var tp1=0;
+var tp2=0;
+var tp3=0;
+var tp4=0;
+var team1=[];
+var team2=[];
+var team3=[];
+var team4=[];
+var team1points=[];
+var team2points=[];
+var team3points=[];
+var team4points=[];
+var team1name=localStorage.getItem("FirstTeamName");
+var team2name=localStorage.getItem("SecondTeamName");
+var team3name=localStorage.getItem("ThirdTeamName");
+var team4name=localStorage.getItem("FourthTeamName");
+function check(){
+  bid=1;
+  if(currentPrice==0)
+  currentPrice=batbase[count];
+  else
+  {
+  if(currentPrice>=100 && currentPrice<200)
+  {
+  currentPrice+=10;
+  }
+  else if(currentPrice>=200 && currentPrice<500)
+  {
+  currentPrice+=20;
+  }
+  else if(currentPrice>=500)
+  {
+  currentPrice+=25;
+  }
+}
+  document.getElementById("Current").innerHTML=currentPrice+"L"+"("+team1name+")";
+  document.getElementById("bid1").disabled=true;
+  document.getElementById("bid2").disabled=false;
+  document.getElementById("bid3").disabled=false;
+  document.getElementById("bid4").disabled=false;
+  return bid;
+}
+function check1(){
+  bid=1;
+  if(currentPrice==0)
+  currentPrice=batbase[count];
+  else
+  {
+  if(currentPrice>=100 && currentPrice<200)
+  {
+  currentPrice+=10;
+  }
+  else if(currentPrice>=200 && currentPrice<500)
+  {
+  currentPrice+=20;
+  }
+  else if(currentPrice>=500)
+  {
+  currentPrice+=25;
+  }
+}
+  document.getElementById("Current").innerHTML=currentPrice+"L"+"("+team2name+")";
+  document.getElementById("bid2").disabled=true;
+  document.getElementById("bid1").disabled=false;
+  document.getElementById("bid3").disabled=false;
+  document.getElementById("bid4").disabled=false;
+  return bid;
+}
+function check2(){
+  bid=1;
+  if(currentPrice==0)
+  currentPrice=batbase[count];
+  else
+  {
+  if(currentPrice>=100 && currentPrice<200)
+  {
+  currentPrice+=10;
+  }
+  else if(currentPrice>=200 && currentPrice<500)
+  {
+  currentPrice+=20;
+  }
+  else if(currentPrice>=500)
+  {
+  currentPrice+=25;
+  }
+  }
+  document.getElementById("Current").innerHTML=currentPrice+"L"+"("+team3name+")";
+  document.getElementById("bid3").disabled=true;
+  document.getElementById("bid2").disabled=false;
+  document.getElementById("bid1").disabled=false;
+  document.getElementById("bid4").disabled=false;
+  return bid;
+}
+function check3(){
+  bid=1;
+  if(currentPrice==0)
+  currentPrice=batbase[count];
+  else
+  {
+  if(currentPrice>=100 && currentPrice<200)
+  {
+  currentPrice+=10;
+  }
+  else if(currentPrice>=200 && currentPrice<500)
+  {
+  currentPrice+=20;
+  }
+  else if(currentPrice>=500)
+  {
+  currentPrice+=25;
+  }
+}
+  document.getElementById("Current").innerHTML=currentPrice+"L"+"("+team4name+")";
+  document.getElementById("bid4").disabled=true;
+  document.getElementById("bid2").disabled=false;
+  document.getElementById("bid3").disabled=false;
+  document.getElementById("bid1").disabled=false;
+  return bid;
+}
+function show1(){
+  document.getElementById("Teamplayers").innerHTML=team1.join('');
+  document.getElementById("userteam").innerHTML="Team "+team1name;
+}
+function show2(){
+  document.getElementById("Teamplayers").innerHTML=team2.join('');
+  document.getElementById("userteam").innerHTML="Team "+team2name;
+}
+function show3(){
+  document.getElementById("Teamplayers").innerHTML=team3.join('');
+  document.getElementById("userteam").innerHTML="Team "+team3name;
+}
+function show4(){
+  document.getElementById("Teamplayers").innerHTML=team4.join('');
+  document.getElementById("userteam").innerHTML="Team "+team4name;
+}
+var countdownNumberEl = document.getElementById('countdown-number');
+var countdown = 3;
+const css = document.getElementById('round1');
+var rm1=8000;
+var rm2=8000;
+var rm3=8000;
+var rm4=8000;
+countdownNumberEl.textContent = countdown;
+setTimeout(function(){
+  document.getElementById("countdown").style.visibility = "visible";
+setInterval(function() {
+
+if(--countdown<=0 || bid==1)
+{
+if(bid==1){
+  countdown=3;
+  bid=0;
+  return;
+}
+if(count==5){
+  const closeModalButtons = document.querySelectorAll('[data-close-button]')
+  const overlay = document.getElementById('overlay')
+  var modal=document.querySelector("#modal");
+  openModal(modal);
+  overlay.addEventListener('click', () => {
+    const modals = document.querySelectorAll('.modal.active')
+    modals.forEach(modal => {
+      closeModal(modal)
+    })
+  })
+
+  closeModalButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const modal = button.closest('.modal')
+      closeModal(modal)
+    })
+  })
+
+  function openModal(modal) {
+    if (modal == null) return
+    modal.classList.add('active')
+    overlay.classList.add('active')
+  }
+
+  function closeModal(modal) {
+    if (modal == null) return
+    modal.classList.remove('active')
+    overlay.classList.remove('active')
+  }
+return;
+}
+if(count==18){
+  var msg = "Next coming up are the bowlers";
+  var speech = new SpeechSynthesisUtterance();
+  speech.lang = "en-US";
+  speech.text = msg;
+  speech.rate = 1;
+  speech.volume = 1;
+  speech.pitch = 10;
+  window.speechSynthesis.speak(speech);
+}
+if(count==36){
+  var msg = "Next coming up are the all rounders";
+  var speech = new SpeechSynthesisUtterance();
+  speech.lang = "en-US";
+  speech.text = msg;
+  speech.rate = 1;
+  speech.volume = 1;
+  speech.pitch = 10;
+  window.speechSynthesis.speak(speech);
+}
+if(count==52){
+  var msg = "Next coming up are the Wicket Keepers";
+  var speech = new SpeechSynthesisUtterance();
+  speech.lang = "en-US";
+  speech.text = msg;
+  speech.rate = 1;
+  speech.volume = 1;
+  speech.pitch = 10;
+  window.speechSynthesis.speak(speech);
+}
+  countdown=3;
+if(document.getElementById("bid1").disabled)
+{
+  tp1=tp1+1;
+  rm1=rm1-currentPrice;
+  team1.push(batters[count]+"<br>");
+  if(rating[count]=='A'){
+    team1points.push(10);
+    alert(team1points[0]);
+  }
+  if(rating[count]=='B'){
+    team1points.push(9);
+  }
+  if(rating[count]=='C'){
+    team1points.push(8);
+  }
+  if(rating[count]=='D'){
+    team1points.push(7);
+  }
+  if(rating[count]=='E'){
+    team1points.push(6);
+  }
+  var msg = "Sold to"+" team "+team1name;
+  var speech = new SpeechSynthesisUtterance();
+  speech.lang = "en-US";
+  speech.text = msg;
+  speech.rate = 0.8;
+  speech.volume = 1;
+  speech.pitch = 5;
+  window.speechSynthesis.speak(speech);
+}
+if(document.getElementById("bid2").disabled)
+{
+  tp2=tp2+1;
+  rm2=rm2-currentPrice;
+  team2.push(batters[count]+"<br>");
+  if(rating[count]=='A'){
+    team2points.push(10);
+  }
+  if(rating[count]=='B'){
+    team2points.push(9);
+  }
+  if(rating[count]=='C'){
+    team2points.push(8);
+  }
+  if(rating[count]=='D'){
+    team2points.push(7);
+  }
+  if(rating[count]=='E'){
+    team2points.push(6);
+  }
+  var msg = "Sold to"+" team "+team2name;
+  var speech = new SpeechSynthesisUtterance();
+  speech.lang = "en-US";
+  speech.text = msg;
+  speech.rate = 0.8;
+  speech.volume = 1;
+  speech.pitch = 5;
+  window.speechSynthesis.speak(speech);
+
+}
+if(document.getElementById("bid3").disabled)
+{
+  tp3=tp3+1;
+  rm3=rm3-currentPrice;
+  team3.push(batters[count]+"<br>");
+  if(rating[count]=='A'){
+    team3points.push(10);
+  }
+  if(rating[count]=='B'){
+    team3points.push(9);
+  }
+  if(rating[count]=='C'){
+    team3points.push(8);
+  }
+  if(rating[count]=='D'){
+    team3points.push(7);
+  }
+  if(rating[count]=='E'){
+    team3points.push(6);
+  }
+  var msg = "Sold to"+" team "+team3name;
+  var speech = new SpeechSynthesisUtterance();
+  speech.lang = "en-US";
+  speech.text = msg;
+  speech.rate = 0.8;
+  speech.volume = 1;
+  speech.pitch = 5;
+  window.speechSynthesis.speak(speech);
+}
+if(document.getElementById("bid4").disabled)
+{
+  tp4=tp4+1;
+  rm4=rm4-currentPrice;
+  team4.push(batters[count]+"<br>");
+  if(rating[count]=='A'){
+    team4points.push(10);
+  }
+  if(rating[count]=='B'){
+    team4points.push(9);
+  }
+  if(rating[count]=='C'){
+    team4points.push(8);
+  }
+  if(rating[count]=='D'){
+    team4points.push(7);
+  }
+  if(rating[count]=='E'){
+    team4points.push(6);
+  }
+  var msg = "Sold to"+" team "+team4name;
+  var speech = new SpeechSynthesisUtterance();
+  speech.lang = "en-US";
+  speech.text = msg;
+  speech.rate = 0.8;
+  speech.volume = 1;
+  speech.pitch = 5;
+  window.speechSynthesis.speak(speech);
+}
+  document.getElementById("bid4").disabled=false;
+  document.getElementById("bid2").disabled=false;
+  document.getElementById("bid3").disabled=false;
+  document.getElementById("bid1").disabled=false;
+document.getElementById('pp').innerHTML="Players Purchased : "+tp1;
+document.getElementById('pp1').innerHTML="Players Purchased : "+tp2;
+document.getElementById('pp2').innerHTML="Players Purchased : "+tp3;
+document.getElementById('pp3').innerHTML="Players Purchased : "+tp4;
+
+  document.getElementById("rm").innerHTML="Remaining Purse : "+rm1+"L";
+  document.getElementById("rm1").innerHTML="Remaining Purse : "+rm2+"L";
+  document.getElementById("rm2").innerHTML="Remaining Purse : "+rm3+"L";
+  document.getElementById("rm3").innerHTML="Remaining Purse : "+rm4+"L";
+  currentPrice=0;
+  document.getElementById("Current").innerHTML="";
+  count++;
+
+}
+else {
+  if(countdown==5)
+  {
+    var msg = "Any final call";
+    var speech = new SpeechSynthesisUtterance();
+    speech.lang = "en-US";
+    speech.text = msg;
+    speech.rate = 1;
+    speech.volume = 1;
+    speech.pitch = 10;
+    window.speechSynthesis.speak(speech);
+  }
+  document.getElementById("PlayerName").innerHTML=batters[count];
+  document.getElementById("StrikeRate").innerHTML=batsmenStrikeRate[count];
+  document.getElementById("BallEco").innerHTML=BallEco[count];
+  document.getElementById("Country").innerHTML=batsCountry[count];
+  var c=count+1;
+  document.getElementById("PlayersPics").src="B"+c.toString()+".png";
+  document.getElementById("base").innerHTML=batbase[count]+"L";
+}
+  countdownNumberEl.textContent = countdown;
+}, 1000);
+},5000);
+
+window.onload=function() {
+var msg = "Welcome to Auction Bazji Make your team in your way";
+var speech = new SpeechSynthesisUtterance();
+speech.lang = "en-US";
+speech.text = msg;
+speech.rate = 1;
+speech.volume = 1;
+speech.pitch = 10;
+window.speechSynthesis.speak(speech);
+  document.getElementById("countdown").style.visibility = "hidden";
+document.getElementById("PlayersPics").src="load101.gif";
+  var team1name=localStorage.getItem("FirstTeamName");
+  var team2name=localStorage.getItem("SecondTeamName");
+  var team3name=localStorage.getItem("ThirdTeamName");
+  var team4name=localStorage.getItem("FourthTeamName");
+document.getElementById("firstuser").innerHTML="Team "+team1name;
+document.getElementById("seconduser").innerHTML="Team "+team2name;
+document.getElementById("thirduser").innerHTML="Team "+team3name;
+document.getElementById("fourthuser").innerHTML="Team "+team4name;
+}
+// helper functions
+const PI2 = Math.PI * 2
+const random = (min, max) => Math.random() * (max - min + 1) + min | 0
+const timestamp = _ => new Date().getTime()
+
+// container
+class Birthday {
+  constructor() {
+    this.resize()
+
+    // create a lovely place to store the firework
+    this.fireworks = []
+    this.counter = 0
+
+  }
+
+  resize() {
+    this.width = canvas.width = window.innerWidth
+    let center = this.width / 2 | 0
+    this.spawnA = center - center / 4 | 0
+    this.spawnB = center + center / 4 | 0
+
+    this.height = canvas.height = window.innerHeight
+    this.spawnC = this.height * .1
+    this.spawnD = this.height * .5
+
+  }
+
+  onClick(evt) {
+     let x = evt.clientX || evt.touches && evt.touches[0].pageX
+     let y = evt.clientY || evt.touches && evt.touches[0].pageY
+
+     let count = random(3,5)
+     for(let i = 0; i < count; i++) this.fireworks.push(new Firework(
+        random(this.spawnA, this.spawnB),
+        this.height,
+        x,
+        y,
+        random(0, 260),
+        random(30, 110)))
+
+     this.counter = -1
+
+  }
+
+  update(delta) {
+    ctx.globalCompositeOperation = 'hard-light'
+    ctx.fillStyle = `rgba(20,20,20,${ 7 * delta })`
+    ctx.fillRect(0, 0, this.width, this.height)
+
+    ctx.globalCompositeOperation = 'lighter'
+    for (let firework of this.fireworks) firework.update(delta)
+
+    // if enough time passed... create new new firework
+    this.counter += delta * 3 // each second
+    if (this.counter >= 1) {
+      this.fireworks.push(new Firework(
+        random(this.spawnA, this.spawnB),
+        this.height,
+        random(0, this.width),
+        random(this.spawnC, this.spawnD),
+        random(0, 360),
+        random(30, 110)))
+      this.counter = 0
+    }
+
+    // remove the dead fireworks
+    if (this.fireworks.length > 1000) this.fireworks = this.fireworks.filter(firework => !firework.dead)
+
+  }
+}
+
+class Firework {
+  constructor(x, y, targetX, targetY, shade, offsprings) {
+    this.dead = false
+    this.offsprings = offsprings
+
+    this.x = x
+    this.y = y
+    this.targetX = targetX
+    this.targetY = targetY
+
+    this.shade = shade
+    this.history = []
+  }
+  update(delta) {
+    if (this.dead) return
+
+    let xDiff = this.targetX - this.x
+    let yDiff = this.targetY - this.y
+    if (Math.abs(xDiff) > 3 || Math.abs(yDiff) > 3) { // is still moving
+      this.x += xDiff * 2 * delta
+      this.y += yDiff * 2 * delta
+
+      this.history.push({
+        x: this.x,
+        y: this.y
+      })
+
+      if (this.history.length > 20) this.history.shift()
+
+    } else {
+      if (this.offsprings && !this.madeChilds) {
+
+        let babies = this.offsprings / 2
+        for (let i = 0; i < babies; i++) {
+          let targetX = this.x + this.offsprings * Math.cos(PI2 * i / babies) | 0
+          let targetY = this.y + this.offsprings * Math.sin(PI2 * i / babies) | 0
+
+          birthday.fireworks.push(new Firework(this.x, this.y, targetX, targetY, this.shade, 0))
+
+        }
+
+      }
+      this.madeChilds = true
+      this.history.shift()
+    }
+
+    if (this.history.length === 0) this.dead = true
+    else if (this.offsprings) {
+        for (let i = 0; this.history.length > i; i++) {
+          let point = this.history[i]
+          ctx.beginPath()
+          ctx.fillStyle = 'hsl(' + this.shade + ',100%,' + i + '%)'
+          ctx.arc(point.x, point.y, 1, 0, PI2, false)
+          ctx.fill()
+        }
+      } else {
+      ctx.beginPath()
+      ctx.fillStyle = 'hsl(' + this.shade + ',100%,50%)'
+      ctx.arc(this.x, this.y, 1, 0, PI2, false)
+      ctx.fill()
+    }
+
+  }
+}
+
+let canvas = document.getElementById('birthday')
+let ctx = canvas.getContext('2d')
+
+let then = timestamp()
+
+let birthday = new Birthday
+window.onresize = () => birthday.resize()
+document.onclick = evt => birthday.onClick(evt)
+document.ontouchstart = evt => birthday.onClick(evt)
+
+;(function loop(){
+  	requestAnimationFrame(loop)
+
+  	let now = timestamp()
+  	let delta = now - then
+
+    then = now
+    birthday.update(delta / 1000)
+
+
+  })()
+
+</script>
+</body>
+</html>

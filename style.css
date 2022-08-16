@@ -1,0 +1,33 @@
+
+body
+ {
+     background-image: url("ipl.jpg");
+     background-repeat: no-repeat;
+     background-size: cover;
+ }
+ h1{
+   font-family: 'Montserrat', sans-serif;
+   size:3.5em;
+   line-height: 1.5;
+   color:white;
+ }
+ #features{
+   margin-top:25px;
+background-color:black;
+   margin-left: 320px;
+   margin-right: 320px;
+   position: relative;
+   z-index: 1;
+   opacity: 0.9;
+   font-family: Montserrat;
+ }
+.carousel-inner{
+  padding-bottom: 2%;
+}
+.card-img-top{
+  height: 185;
+  width: 100%;
+}
+.active{
+  padding-bottom: 2%;
+}
